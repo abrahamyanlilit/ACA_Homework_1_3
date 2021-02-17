@@ -4,24 +4,15 @@ namespace ACA_Homework_1_3
 {
     class Program
     {
-        static void f(string[] array)
+        static void WriteInBox(string[] array)
         {
-            int[] array1 = new int[1000];
-
-            for (int i = 0; i < array.Length; i++)
+            int max = array[0].Length;
+            for(int i = 0; i < array.Length; i++)
             {
-                int count = 0;
-
-                for (int j = 0; j < array[i].Length; j++)
-                    count++;
-                array1[i] = count;
-            }
-
-            int max = array1[0];
-            for (int i = 0; i < array1.Length; i++)
-            {
-                if (array1[i] > max)
-                    max = array1[i];
+                if(array[i].Length > max)
+                {
+                    max = array[i].Length;
+                }
             }
 
             int asterisks = max + 4;
@@ -43,7 +34,7 @@ namespace ACA_Homework_1_3
         static void Main(string[] args)
         {
             string[] array = { "Hello", "my", "name", "is", "Lilit" };
-            f(array);
+            WriteInBox(array);
         }
     }
 }
